@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Seguridad Balística">
+  <rect width="64" height="64" rx="12" fill="#050506"/>
+  <path d="M32 5 54 18v28L32 59 10 46V18z" fill="#0c0d10" stroke="#d9a441" stroke-width="3.4" stroke-linejoin="round"/>
+  <path d="M32 11 48.5 20.6v22.8L32 53 15.5 43.4V20.6z" fill="none" stroke="#d91e26" stroke-width="1.8" stroke-linejoin="round"/>
+  <text x="32" y="39" text-anchor="middle" font-family="Arial Black, Arial, sans-serif" font-weight="900" font-size="19" fill="#d9a441">SB</text>
+  <path d="M32 9.5c1.7 1.7 2.5 3.4 2.5 5.3V50h-5V14.8c0-1.9.8-3.6 2.5-5.3z" fill="#f6d98c" stroke="#050506" stroke-width="1"/>
+</svg>
