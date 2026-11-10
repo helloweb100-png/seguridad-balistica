@@ -224,7 +224,11 @@
     const hdr = $('.hdr');
     const progress = $('#progress');
     const links = $$('.nav a');
-    const sections = links.map((a) => $(a.getAttribute('href')));
+    // En las páginas de servicio los enlaces apuntan a otra página (../index.html#...): solo se resaltan los de esta misma página
+    const sections = links.map((a) => {
+      const h = a.getAttribute('href') || '';
+      return h.charAt(0) === '#' ? $(h) : null;
+    });
     tasks.push((vh) => {
       const y = window.scrollY;
       const max = root.scrollHeight - vh;
