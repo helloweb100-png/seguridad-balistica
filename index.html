@@ -439,34 +439,21 @@
             <li><svg class="ico" aria-hidden="true"><use href="#i-hex"/></svg>Acero soldado como primera barrera</li>
           </ul>
         </div>
-        <figure class="cont__fig reveal">
-          <svg class="diag" viewBox="0 0 440 440" role="img" aria-labelledby="diag-t diag-d">
-            <title id="diag-t">Ilustración esquemática de un tubo de descarga balística</title>
-            <desc id="diag-d">Corte del tubo: un proyectil entra por la boca, atraviesa la cavidad y queda atrapado en el caucho anti-rebote del fondo.</desc>
-            <defs>
-              <pattern id="hatch" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="7" height="7" fill="#3a3d44"/><path d="M0 0v7" stroke="#6b717c" stroke-width="2"/></pattern>
-              <linearGradient id="dGold" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fbe7ad"/><stop offset=".6" stop-color="#d9a441"/><stop offset="1" stop-color="#8f5f17"/></linearGradient>
-            </defs>
-            <g class="diag__tube" transform="translate(170 220) rotate(-24)">
-              <rect x="-82" y="-190" width="164" height="380" rx="8" fill="#14161a" stroke="#0b0c0e" stroke-width="2"/>
-              <rect x="-60" y="-190" width="120" height="358" rx="4" fill="url(#hatch)"/>
-              <rect x="-36" y="-190" width="72" height="326" fill="#ece9e2"/>
-              <rect x="-82" y="-190" width="22" height="26" rx="4" fill="#d91e26"/>
-              <rect x="60" y="-190" width="22" height="26" rx="4" fill="#d91e26"/>
-              <path d="M-36 -190v326M36 -190v326" stroke="#0b0c0e" stroke-width="1.5"/>
-              <g class="diag__shot">
-                <path d="M0 -14 7 -3v22h-14V-3z" fill="url(#dGold)" stroke="#6b4310" stroke-width="1"/>
-                <path d="M-7 14h14" stroke="#7a0d12" stroke-width="2"/>
-              </g>
-              <g transform="translate(0 138)"><g class="diag__hit"><circle r="12" fill="none" stroke="#d91e26" stroke-width="2.6"/><circle r="4.5" fill="#d91e26"/></g></g>
-            </g>
-            <g class="diag__lab" font-family="IBM Plex Mono, ui-monospace, monospace" font-size="11" fill="#0b0c0e" letter-spacing="1.2">
-              <path d="M194 40h-28" stroke="#0b0c0e" stroke-width="1"/><text x="200" y="38">ACERO</text><text x="200" y="52">SOLDADO</text>
-              <path d="M96 337h62" stroke="#0b0c0e" stroke-width="1"/><text x="6" y="330">CAUCHO</text><text x="6" y="344">ANTI-REBOTE</text>
-              <path d="M236 346h96" stroke="#d91e26" stroke-width="1.4"/><text x="338" y="342" fill="#b3141b">PROYECTIL</text><text x="338" y="356" fill="#b3141b">CONTENIDO</text>
-            </g>
-          </svg>
-          <figcaption class="mono">Ilustración esquemática, no a escala.</figcaption>
+        <!-- Video de la prueba de disparo + 2 imágenes (pedido del cliente); reemplaza el esquema -->
+        <figure class="cont__fig cmedia reveal">
+          <div class="cmedia__grid">
+            <video class="cmedia__vid" controls muted loop playsinline preload="metadata" data-autoplay poster="assets/video/tubo-en-uso-poster.jpg" aria-label="Video: prueba de disparo en el cilindro de descarga">
+              <source src="assets/video/tubo-en-uso.mp4" type="video/mp4">
+              Tu navegador no puede reproducir este video.
+            </video>
+            <button class="cmedia__ph" type="button" data-zoom data-src="assets/img/arma-larga-cilindro.jpg" data-cap="Imagen ilustrativa: manipulación de un arma larga junto a un cilindro de descarga" aria-label="Ampliar foto: arma larga junto a un cilindro de descarga">
+              <img src="assets/img/arma-larga-cilindro.jpg" alt="Persona retirando el cargador de un rifle mientras la boca del arma está dentro de un cilindro rojo con perforaciones" width="935" height="924" loading="lazy" decoding="async">
+            </button>
+            <button class="cmedia__ph" type="button" data-zoom data-src="assets/img/pistola-cilindro.jpg" data-cap="Imagen ilustrativa: manipulación de una pistola junto a un cilindro de descarga" aria-label="Ampliar foto: pistola junto a un cilindro de descarga">
+              <img src="assets/img/pistola-cilindro.jpg" alt="Mano sosteniendo una pistola con la boca del arma dentro de un cilindro rojo con perforaciones" width="843" height="875" loading="lazy" decoding="async">
+            </button>
+          </div>
+          <figcaption class="mono">Video de la prueba de disparo · Imágenes ilustrativas</figcaption>
         </figure>
       </div>
     </section>
