@@ -691,6 +691,30 @@
   }
 
   /* ---------------------------------------------------------------
+     Videos: se reproducen solos (sin sonido) cuando están a la vista y se
+     pausan al salir de pantalla. Siempre tienen controles para activar el
+     sonido o pausar. Con "reducir movimiento" no arrancan solos.
+     --------------------------------------------------------------- */
+  function initVideos() {
+    const vids = $$('video[data-autoplay]');
+    if (!vids.length) return;
+    vids.forEach((v) => { v.muted = true; });
+    if (reduce || !hasIO) return;
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((en) => {
+        const v = en.target;
+        if (en.isIntersecting) {
+          const p = v.play();
+          if (p && p.catch) p.catch(() => { /* el navegador pidió un toque: queda el botón de play */ });
+        } else {
+          v.pause();
+        }
+      });
+    }, { threshold: 0.45 });
+    vids.forEach((v) => io.observe(v));
+  }
+
+  /* ---------------------------------------------------------------
      Arranque
      --------------------------------------------------------------- */
   const yearEl = $('#year');
@@ -712,6 +736,7 @@
   safe('proceso', initProcess);
   safe('puntero', initPointerFx);
   safe('visor', initLightbox);
+  safe('videos', initVideos);
 
   window.addEventListener('scroll', schedule, { passive: true });
   let resizeTimer = 0;

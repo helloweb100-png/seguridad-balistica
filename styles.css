@@ -1650,7 +1650,7 @@ h1, h2, h3, p, figure, dl, dd { margin: 0; }
 /* Simulación de un disparo dentro del cilindro */
 .sim__grid { display: grid; gap: 28px; align-items: start; }
 .sim__fig { margin: 0; padding: 20px 16px 16px; border: 1px solid var(--line-2); border-radius: 22px; background: radial-gradient(80% 55% at 50% 0%, rgba(217, 164, 65, .12), transparent 70%), #08090b; }
-.sim__svg { width: min(100%, 400px); height: auto; margin-inline: auto; overflow: visible; }
+.sim__svg { width: min(100%, 520px); height: auto; margin-inline: auto; overflow: visible; }
 .sim__fig figcaption { margin-top: 10px; text-align: center; color: var(--tx-3); font-size: .64rem; }
 .sim__copy { display: grid; gap: 16px; }
 .sim__steps { display: grid; gap: 10px; }
@@ -1669,20 +1669,37 @@ h1, h2, h3, p, figure, dl, dd { margin: 0; }
 .aviso p { color: var(--tx-2); font-size: .95rem; }
 
 /* Piezas de la simulación (el estado base = fotograma final; así con «reducir movimiento» se ve completa) */
-.sim__gun { transform: translate(180px, 203px); }
+.sim__gun { transform: translateY(192px); }
 .sim__flash { opacity: 0; transform-box: fill-box; transform-origin: center; }
-.sim__trail { opacity: 0; transform-box: fill-box; transform-origin: 50% 100%; }
-.sim__bullet { transform: translate(180px, 378px); }
+.sim__chan { transform-box: fill-box; transform-origin: 50% 0; }
+.sim__bullet { transform: translateY(308px); }
 .sim__hit { opacity: 0; transform-box: fill-box; transform-origin: center; }
-.sim__floor { transform-box: fill-box; transform-origin: 50% 100%; }
 .sim__tag { opacity: 1; }
 .sim__gun { animation: simGun 8s linear infinite; }
 .sim__flash { animation: simFlash 8s linear infinite; }
-.sim__trail { animation: simTrail 8s linear infinite; }
+.sim__chan { animation: simChan 8s linear infinite; }
 .sim__bullet { animation: simBullet 8s linear infinite; }
 .sim__hit { animation: simHit 8s ease-out infinite; }
-.sim__floor { animation: simFloor 8s ease-out infinite; }
 .sim__tag { animation: simTag 8s linear infinite; }
+
+/* Materiales del relleno (leyenda) */
+.mats { display: grid; gap: 10px; }
+.mats li { display: flex; align-items: center; gap: 14px; padding: 12px 14px; border: 1px solid var(--line); border-radius: 14px; background: rgba(255, 255, 255, .03); }
+.mats svg { flex: none; width: 46px; height: 46px; border: 1px solid var(--line-2); border-radius: 10px; }
+.mats strong { display: block; font-family: var(--f-display); font-size: 1rem; line-height: 1.2; text-transform: uppercase; }
+.mats span { color: var(--tx-2); font-size: .9rem; }
+.mats__note { color: var(--tx-2); font-size: .95rem; }
+.mats__note strong { color: var(--gold-hi); font-weight: 600; }
+
+/* Videos en el inicio */
+.vids { padding-top: 0; }
+.vids__grid { display: grid; gap: 36px; align-items: start; }
+.vcard { display: grid; gap: 16px; }
+.vcard .vid video { box-shadow: 0 40px 80px -50px rgba(217, 164, 65, .6); }
+.vcard__txt { display: grid; gap: 6px; justify-items: start; }
+.vcard__txt .mono { color: var(--gold); }
+.vcard__txt h3 { font-family: var(--f-display); font-weight: 700; font-size: clamp(1.1rem, 2.2vw, 1.4rem); line-height: 1.14; text-transform: uppercase; }
+.vcard__txt .btn { margin-top: 8px; }
 
 /* Video */
 .vid__grid { display: grid; gap: 28px; align-items: center; }
@@ -1709,15 +1726,15 @@ h1, h2, h3, p, figure, dl, dd { margin: 0; }
 .sp-more .mono { display: block; color: var(--gold); }
 
 @keyframes simS1 { 0%, 22% { border-color: rgba(217, 164, 65, .4); background: rgba(217, 164, 65, .06); color: var(--tx); } 24%, 100% { border-color: var(--line); background: rgba(255, 255, 255, .02); color: var(--tx-3); } }
-@keyframes simS2 { 0%, 22% { border-color: var(--line); background: rgba(255, 255, 255, .02); color: var(--tx-3); } 24%, 36% { border-color: rgba(217, 164, 65, .4); background: rgba(217, 164, 65, .06); color: var(--tx); } 38%, 100% { border-color: var(--line); background: rgba(255, 255, 255, .02); color: var(--tx-3); } }
-@keyframes simS3 { 0%, 36% { border-color: var(--line); background: rgba(255, 255, 255, .02); color: var(--tx-3); } 38%, 96% { border-color: rgba(217, 164, 65, .4); background: rgba(217, 164, 65, .06); color: var(--tx); } 98%, 100% { border-color: var(--line); background: rgba(255, 255, 255, .02); color: var(--tx-3); } }
+@keyframes simS2 { 0%, 22% { border-color: var(--line); background: rgba(255, 255, 255, .02); color: var(--tx-3); } 24%, 44% { border-color: rgba(217, 164, 65, .4); background: rgba(217, 164, 65, .06); color: var(--tx); } 46%, 100% { border-color: var(--line); background: rgba(255, 255, 255, .02); color: var(--tx-3); } }
+@keyframes simS3 { 0%, 44% { border-color: var(--line); background: rgba(255, 255, 255, .02); color: var(--tx-3); } 46%, 96% { border-color: rgba(217, 164, 65, .4); background: rgba(217, 164, 65, .06); color: var(--tx); } 98%, 100% { border-color: var(--line); background: rgba(255, 255, 255, .02); color: var(--tx-3); } }
 @keyframes simGun {
-  0% { transform: translate(180px, 83px); opacity: 0; }
+  0% { transform: translateY(72px); opacity: 0; }
   8% { opacity: 1; }
-  18%, 22% { transform: translate(180px, 203px); opacity: 1; }
-  23% { transform: translate(180px, 191px); opacity: 1; }
-  27%, 92% { transform: translate(180px, 203px); opacity: 1; }
-  100% { transform: translate(180px, 83px); opacity: 0; }
+  18%, 22% { transform: translateY(192px); opacity: 1; }
+  23% { transform: translateY(180px); opacity: 1; }
+  27%, 92% { transform: translateY(192px); opacity: 1; }
+  100% { transform: translateY(72px); opacity: 0; }
 }
 @keyframes simFlash {
   0%, 22% { opacity: 0; transform: scale(.4); }
@@ -1725,32 +1742,34 @@ h1, h2, h3, p, figure, dl, dd { margin: 0; }
   27% { opacity: .75; transform: scale(1.3); }
   31%, 100% { opacity: 0; transform: scale(1.5); }
 }
-@keyframes simTrail {
-  0%, 23% { opacity: 0; transform: scaleY(.2); }
-  24% { opacity: .95; transform: scaleY(1); }
-  33% { opacity: .95; transform: scaleY(1); }
-  35%, 100% { opacity: 0; transform: scaleY(1); }
-}
+/* La ojiva entra, atraviesa las primeras capas y se frena (ilustrativo) */
 @keyframes simBullet {
-  0%, 23% { transform: translate(180px, 216px); opacity: 0; }
-  24% { transform: translate(180px, 220px); opacity: 1; }
-  33% { transform: translate(180px, 372px); opacity: 1; }
-  34%, 95% { transform: translate(180px, 378px); opacity: 1; }
-  98%, 100% { transform: translate(180px, 378px); opacity: 0; }
+  0%, 23% { transform: translateY(198px); opacity: 0; }
+  24% { transform: translateY(202px); opacity: 1; }
+  27% { transform: translateY(226px); opacity: 1; }
+  31% { transform: translateY(252px); opacity: 1; }
+  36% { transform: translateY(280px); opacity: 1; }
+  42% { transform: translateY(300px); opacity: 1; }
+  46%, 95% { transform: translateY(308px); opacity: 1; }
+  98%, 100% { transform: translateY(308px); opacity: 0; }
+}
+@keyframes simChan {
+  0%, 24% { transform: scaleY(0); opacity: 1; }
+  27% { transform: scaleY(.24); }
+  31% { transform: scaleY(.48); }
+  36% { transform: scaleY(.74); }
+  42% { transform: scaleY(.93); }
+  46%, 95% { transform: scaleY(1); opacity: 1; }
+  98%, 100% { transform: scaleY(1); opacity: 0; }
 }
 @keyframes simHit {
-  0%, 33% { opacity: 0; transform: scale(.3); }
-  35% { opacity: 1; transform: scale(1); }
-  52%, 100% { opacity: 0; transform: scale(3); }
-}
-@keyframes simFloor {
-  0%, 33% { transform: scaleY(1); }
-  35% { transform: scaleY(.9); }
-  46%, 100% { transform: scaleY(1); }
+  0%, 45% { opacity: 0; transform: scale(.3); }
+  47% { opacity: 1; transform: scale(1); }
+  62%, 100% { opacity: 0; transform: scale(3); }
 }
 @keyframes simTag {
-  0%, 35% { opacity: 0; }
-  40%, 94% { opacity: 1; }
+  0%, 46% { opacity: 0; }
+  52%, 94% { opacity: 1; }
   98%, 100% { opacity: 0; }
 }
 
@@ -1780,4 +1799,7 @@ h1, h2, h3, p, figure, dl, dd { margin: 0; }
 @media (min-width: 1100px) {
   .feat__grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
   .gal { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+}
+@media (min-width: 960px) {
+  .vids__grid { grid-template-columns: 340px minmax(0, 1fr); gap: 56px; align-items: center; }
 }
