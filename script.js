@@ -11,7 +11,7 @@
      Formato: código de país 52 + 10 dígitos. Vacío = se ocultan los
      botones de WhatsApp y el envío del formulario.
      --------------------------------------------------------------- */
-  const WHATSAPP_NUMBER = '525560110930';
+  const WHATSAPP_NUMBER = '525541934149'; // Cap. Pablo Torreblanca Pérez (contacto principal)
   const DEFAULT_MESSAGE = 'Hola, quiero información de Seguridad Balística.';
 
   /* ---------------------------------------------------------------
